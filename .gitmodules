@@ -1,0 +1,3 @@
+[submodule "programming/python/ztm-python-cheat-sheet"]
+	path = programming/python/ztm-python-cheat-sheet
+	url = git@github.com:aneagoie/ztm-python-cheat-sheet.git

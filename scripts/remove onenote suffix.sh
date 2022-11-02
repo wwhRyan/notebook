@@ -2,8 +2,8 @@
 
 IFS=$'\n'
 
-if [ ! -n $1 ]; then
-
+if [[ ! -z $1 ]]; then
+    echo $1
     cd $1
     echo 'enter $1'
 else

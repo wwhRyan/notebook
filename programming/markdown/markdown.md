@@ -1,4 +1,30 @@
-## markdown备忘
+# markdown备忘
+
+## 基本语法
+
+- [markdown备忘](#markdown备忘)
+  - [基本语法](#基本语法)
+    - [标题](#标题)
+    - [段落和换行](#段落和换行)
+    - [强调语法](#强调语法)
+    - [引用语法](#引用语法)
+    - [列表语法](#列表语法)
+      - [无序列表](#无序列表)
+      - [任务列表](#任务列表)
+      - [有序列表](#有序列表)
+    - [代码框](#代码框)
+    - [分隔线](#分隔线)
+    - [链接语法](#链接语法)
+    - [插入图片](#插入图片)
+    - [转义字符](#转义字符)
+  - [扩展语法](#扩展语法)
+    - [表格](#表格)
+    - [脚注](#脚注)
+    - [删除线](#删除线)
+    - [任务列表](#任务列表-1)
+    - [LaTeX 公式](#latex-公式)
+
+>Markdown All in One:Create Table of Contents 实时更新文章目录
 
 ### 标题
 
@@ -128,6 +154,7 @@ print('hello')
 ---
 
 ## 扩展语法
+>并非所有Markdown应用程序都支持扩展语法元素。这里使用vscode markdown all in one 插件解析markdown扩展语法
 
 ### 表格
 
@@ -135,5 +162,41 @@ print('hello')
 | -------- | -------- | ----- |
 | 单元格 1 | 居中     | $1600 |
 | 单元格 2 | 单元格 3 | $12   |
+> vscode markdown all in one 插件提供表格的格式化 `alt + shift + F`
 
-> 使用 vscode format 可以很好的格式化表格 
+### 脚注
+
+vscode markdown all in one 插件不支持
+
+### 删除线
+
+```markdown
+~~世界是平坦的。~~
+```
+
+~~世界是平坦的。~~ 我们现在知道世界是圆的。
+
+### 任务列表
+
+```markdown
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+```
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
+### LaTeX 公式
+
+```
+$$
+e=mc^2
+$$
+```
+
+$$
+e=mc^2
+$$
+
+在文本中嵌入数学公式 `$x^2$` --> $x^2$

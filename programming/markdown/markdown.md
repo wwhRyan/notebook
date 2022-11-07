@@ -103,11 +103,10 @@
 
 \`\`\` 后面增加语言名称,如JavaScript,然后这里面的代码就会按照对应的语法进行高亮显示.支持高亮显示的语言有:
 `shell` `c` `c#` `java` `json` `python` `matlab` `go` 等
-~~~markdown
+
 ```python
 print('hello')
 ```
-~~~
 
 ### 分隔线
 
@@ -132,22 +131,23 @@ print('hello')
 ![插入图片](./image/Sponbob.jpg "海绵宝宝")
 
 ### 转义字符
-- \* \# \\ \. 等字符需要加反斜杠可以进行转义
-    | 字符 | 转义   | 描述                               |
-    | ---- | ------ | ---------------------------------- |
-    | \\   | \\\\   | backslash 反斜杠                   |
-    | \`   | \\\`   | backtick 反引号                    |
-    | \*   | \\\*   | asterisk 星号                      |
-    | \_   | \\\_   | underscore 下划线                  |
-    | \{\} | \\\{\} | curly braces 花括号                |
-    | \[\] | \\\[\] | square brackets 方括号             |
-    | \(\) | \\\(\) | parentheses 圆括号                 |
-    | \#   | \\\#   | hash mark 哈希标记                 |
-    | \+   | \\\+   | plus sign 加号                     |
-    | \-   | \\\-   | minus sign \(hyphen\) 减号(连字符) |
-    | \.   | \\\.   | dot 点                             |
-    | \!   | \\\!   | exclamation mark 感叹号            |
 
+| 字符 | 转义   | 描述                               |
+| ---- | ------ | ---------------------------------- |
+| \\   | \\\\   | backslash 反斜杠                   |
+| \`   | \\\`   | backtick 反引号                    |
+| \*   | \\\*   | asterisk 星号                      |
+| \_   | \\\_   | underscore 下划线                  |
+| \{\} | \\\{\} | curly braces 花括号                |
+| \[\] | \\\[\] | square brackets 方括号             |
+| \(\) | \\\(\) | parentheses 圆括号                 |
+| \#   | \\\#   | hash mark 哈希标记                 |
+| \+   | \\\+   | plus sign 加号                     |
+| \-   | \\\-   | minus sign \(hyphen\) 减号(连字符) |
+| \.   | \\\.   | dot 点                             |
+| \!   | \\\!   | exclamation mark 感叹号            |
+
+- \* \# \\ \. 等字符需要加反斜杠可以进行转义
 - &lt; &amp; 这两个字符是特殊的,分别是`&lt;` `&amp;`
 - 本质上markdown会转换为网页进行渲染,有一些共同特性
 

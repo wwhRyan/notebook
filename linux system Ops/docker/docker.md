@@ -61,7 +61,62 @@ Docker 容器
 ----
 <!--rehype:body-class=cols-2-->
 
-### 启动和停止
+### 启动
+
+docker run命令采用以下形式：
+
+`docker run [OPTIONS] IMAGE[:TAG] [COMMAND] [ARG...]`
+
+`docker run` 必须指定一个IMAGE 来派生容器。开发人员可以定义与以下相关的镜像默认值
+- 分离或前台运行
+- 容器识别
+- 网络设置
+- CPU 和内存的运行时限制
+
+#### 分离或者前台运行
+
+以**分离模式**启动容器，请使用 `-d` 选项。
+
+以**前台模式**启动容器（默认），`docker run` 在容器中启动进程，将进程的标准输入、输出和标准错误附件到控制台。\
+对于交互式进程（如shell），您必须-i -t一起使用才能为容器进程分配一个tty。
+```bash
+docker run -a stdin -a stdout -i -t ubuntu /bin/bash
+```
+
+#### 清理(--rm)
+默认情况下，容器的文件系统即使在容器退出后仍然存在。如果你正在运行短期的前台进程，这些容器文件系统真的会堆积起来。如果您希望 Docker 自动清理容器并在容器退出时删除文件系统，您可以添加--rm标志
+
+#### 网络设置
+默认情况下,所有容器启用了网络.容器使用与主机相同的DNS服务,使用网络桥接的形式,通过veth接口连接.
+
+#### 端口映射
+要公开容器的内部端口，操作员可以使用 `-P` or `-p` 标志启动容器。暴露的端口可以在主机上访问，并且这些端口可供任何可以访问主机的客户端使用。
+- `-P` 选项将所有端口发布到主机接口
+- `-p` 标志显式映射单个端口或端口范围
+
+#### VOLUME（共享文件系统）
+`-v` 必须始终是绝对路径,
+
+```bash
+-v `pwd`/notebook:/srv/gitbook
+```
+
+#### CMD（默认命令或选项）
+此命令是可选的，因为镜像创建者在 Dockerfile 的 CMD 指令提供了默认值。作为操作员（从图像运行容器的人），可以CMD通过指定一个新的COMMAND. 覆盖dockerfile中默认的CMD
+
+在容器中运行二进制文件的默认工作目录是根目录 ( /)。可以使用 Dockerfile 的 WORKDIR 命令设置不同的工作目录。操作员可以通过以下方式覆盖它
+```bash
+-w="", --workdir="": Working directory inside the container
+```
+
+结合工作目录和CMD指令,可以类似于二进制文件运行一样,运行容器,并提供对应的CMD选项
+```bash
+docker run --rm -v `pwd`/notebook:/srv/gitbook fellah/gitbook gitbook build .
+```
+
+>更多参考 https://docs.docker.com/engine/reference/run/
+
+### 停止
 
 | Description                   | Example        |
 | ----------------------------- | -------------- |

@@ -1,0 +1,35 @@
+{
+    "root": "./",
+    "output": null,
+    "generator": "site",
+    "extension": null,
+    "title": "GitBook notebook",
+    "author": "whwu",
+    "description": "This is notebook for coder",
+    "language": "zh-hans",
+    "isbn": "978-0-13-601970-1",
+    "styles": {
+        "website": "./styles/website.css"
+    },
+    "structure": {
+        "readme": "readme.md",
+        "summary": "summary.md"
+    },
+    "links": {
+        "sidebar": {
+            "github": "https://github.com/wwhRyan/notebook"
+        }
+    },
+    "pdf": {
+        "toc": true,
+        "pageNumbers": false,
+        "fontSize": 12,
+        "paperSize": "a4",
+        "margin": {
+            "right": 62,
+            "left": 62,
+            "top": 36,
+            "bottom": 36
+        }
+    }
+}

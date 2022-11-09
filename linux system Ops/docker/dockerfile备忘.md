@@ -103,14 +103,12 @@ RUN true | false  # 将脱离管道
 使用 `shell` 将为 shell 命令打开严格模式。
 
 ### 命令 CMD
-<!--rehype:wrap-class=col-span-2-->
 
-:- | -
-:- | -
-`CMD ["executable","param1","param2"]` | (exec 形式，这是首选形式)
-`CMD ["param1","param2"]` | (作为 ENTRYPOINT 的默认参数)
-`CMD command param1 param2` | (shell形式)
-<!--rehype:class=auto-wrap-->
+| 命令                                   | 解析                       |
+| -------------------------------------- | -------------------------- |
+| `CMD ["executable","param1","param2"]` | exec 形式，这是首选形式    |
+| `CMD ["param1","param2"]`              | 作为 ENTRYPOINT 的默认参数 |
+| `CMD command param1 param2`            | shell形式                  |
 
 ```dockerfile
 EXPOSE 5900
@@ -180,12 +178,12 @@ temp?
 
 ----
 
-:- | -
-:- | -
-`# comment` | 忽略
-`*/temp*` | 在根的任何直接子目录中<br />排除名称以 `temp` 开头的文件和目录
-`*/*/temp*` | 从根以下两级的任何子目录中<br />排除以 `temp` 开头的文件和目录
-`temp?` | 排除根目录中名称为<br /> `temp` 的单字符扩展名的文件和目录
+| :-          | -                                                              |
+| :---------- | -------------------------------------------------------------- |
+| `# comment` | 忽略                                                           |
+| `*/temp*`   | 在根的任何直接子目录中<br />排除名称以 `temp` 开头的文件和目录 |
+| `*/*/temp*` | 从根以下两级的任何子目录中<br />排除以 `temp` 开头的文件和目录 |
+| `temp?`     | 排除根目录中名称为<br /> `temp` 的单字符扩展名的文件和目录     |
 <!--rehype:class=auto-wrap-->
 
 如果此文件存在，排除与其中的模式匹配的文件和目录，有利于避免 `ADD` 或 `COPY` 将敏感文件添加到镜像中。匹配是使用 Go 的 [filepath.Match](https://golang.org/pkg/path/filepath#Match) 规则完成的。
@@ -193,18 +191,18 @@ temp?
 ### 主要命令
 <!--rehype:wrap-class=col-span-2 -->
 
-命令 | 说明
-:- | -
-`FROM image` | 构建的基础镜像
-~~`MAINTAINER email`~~ | (已弃用)维护者的名字
-`COPY [--chown=<user>:<group>] <src>... <dest>` | 将上下文中的路径复制到位置 `dest` 的容器中
-`ADD [--chown=<user>:<group>] <src>... <dest>` | 与 `COPY` 相同，但解压缩存档并接受 http url。
-`RUN <command>` | 在容器内运行任意命令。
-`USER <user>[:<group>]` | 设置默认用户名。
-`WORKDIR /path/to/workdir` | 设置默认工作目录。
-`CMD command param1 param2` | 设置默认命令
-`ENV <key>=<value> ...` | 设置环境变量
-`EXPOSE <port> [<port>/<protocol>...]` | 运行时侦听指定的网络端口
+| 命令                                            | 说明                                          |
+| :---------------------------------------------- | --------------------------------------------- |
+| `FROM image`                                    | 构建的基础镜像                                |
+| ~~`MAINTAINER email`~~                          | (已弃用)维护者的名字                          |
+| `COPY [--chown=<user>:<group>] <src>... <dest>` | 将上下文中的路径复制到位置 `dest` 的容器中    |
+| `ADD [--chown=<user>:<group>] <src>... <dest>`  | 与 `COPY` 相同，但解压缩存档并接受 http url。 |
+| `RUN <command>`                                 | 在容器内运行任意命令。                        |
+| `USER <user>[:<group>]`                         | 设置默认用户名。                              |
+| `WORKDIR /path/to/workdir`                      | 设置默认工作目录。                            |
+| `CMD command param1 param2`                     | 设置默认命令                                  |
+| `ENV <key>=<value> ...`                         | 设置环境变量                                  |
+| `EXPOSE <port> [<port>/<protocol>...]`          | 运行时侦听指定的网络端口                      |
 <!--rehype:class=auto-wrap-->
 
 ### 服务静态网站的最小 Docker 镜像

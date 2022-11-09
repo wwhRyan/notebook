@@ -1,6 +1,6 @@
 # summary.md 只支持两级目录
 
-* [介绍](readme.md)
+* [lidefish notebook](readme.md)
 * [bash](linux system Ops/bash/常用bash.md)
   * [\[\[ \]\] 逻辑判断](linux system Ops/bash/[[ ]] 逻辑判断.md)
   * [\${ } \$[ ] \$( ) \$(( )) 区分](linux system Ops/bash/区分各种命令替换.md)

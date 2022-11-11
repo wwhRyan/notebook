@@ -3,6 +3,7 @@
 
 
 * [lidefish notebook](readme.md)
+* [C](programming/C/c.md)
 * [bash](linux system Ops/bash/常用bash.md)
   * [\[\[ \]\] 逻辑判断](linux system Ops/bash/[[ ]] 逻辑判断.md)
   * [\${ } \$[ ] \$( ) \$(( )) 区分](linux system Ops/bash/区分各种命令替换.md)
@@ -19,5 +20,6 @@
 * [gitbook网站搭建](linux system Ops\gitbook\搭建gitbook服务.md)
 * [markdown](programming/markdown/markdown.md)
 * [python](programming/python/ztm-python-cheat-sheet/README.md)
+  * [utils](programming/python/python.md)
 * [docker](linux system Ops/docker/docker.md)
   * [dockerfile](linux system Ops/docker/dockerfile备忘.md)

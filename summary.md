@@ -13,6 +13,8 @@
   * [逻辑和流程语句](linux system Ops/bash/逻辑和流程语句.md)
   * [正则表达式](linux system Ops/bash/正则表达式.md)
   * [交互式和登录式shell](linux system Ops/bash/交互式和登录式shell.md)
+  * [好用命令行工具](linux system Ops/bash/好用命令行工具.md)
+* [linux开发](linux system Ops/kernel/vscode + docker + qemu 内核调试.md)
 * [git](programming/git/basic command.md)
   * [submodule](programming/git/submodule.md)
   * [换行符转换](programming/git/sub/Git提示“warning LF will be replaced by CRLF”.md)

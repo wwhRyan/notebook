@@ -60,6 +60,18 @@
 
 ### 参考网址：
 - [AUTOSAR 4.4.0 版本](https://www.autosar.org/standards/classic-platform/classic-platform-440/)
-- 
+
+### 常见的 AUTOSAR 工具：
+- Vendor Tools set
+- Elektrobit
+- EB tresos
+- Vector
+- MICROSAR
+- DaVinci Developer
+- DaVinci Configurator Pro
+- Mentor Graphics
+
+NXP支持的AUTOSAR工具集成商：
+![](autosar_2.png)
 
   

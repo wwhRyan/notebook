@@ -22,7 +22,7 @@ gdb命令行调试真的让人头疼，采取vscode进行调试。
 
 右键点击运行中的容器，选择 attach vscode 
 
-![](vscode+container-1.png)
+![](image/vscode+container-1.png)
 
 进入容器后，打开对应的aos文件夹，在容器中安装 **`c/c++`** 微软官方插件。
 

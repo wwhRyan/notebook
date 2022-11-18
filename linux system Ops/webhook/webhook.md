@@ -128,19 +128,19 @@ hook-json/webhook.sh"
 
 ---
 
-容器下,直接执行命令，没有权限访问宿主机的文件。
+容器下,由于 **Mount Namespace** 隔离，容器进程只能看到当前 Namespace 里的挂载点文件，没有权限访问宿主机的文件。
 ```
 /etc/webhook # nsenter -m -u -i -n -p -t 1 "/usr/bin/ssh -V"
 nsenter: can't execute '/usr/bin/ssh -V': No such file or directory
 ```
 
-容器下,能访问和执行已经挂载的volume上的命令。
+容器下,能访问和执行已经挂载到容器的script。
 ```
 /etc/webhook # nsenter -m -u -i -n -p -t 1 "/root/Code/docker_work/web
 hook-json/webhook.sh"
 ```
 
-容器下，执行已经挂载的volume上 webhook.sh 脚本，宿主机的 webhook.sh 可以访问整个宿主机的文件系统。
+容器下，执行已经挂载的volume上 webhook.sh 脚本，宿主机的 webhook.sh 没有 namespace 隔离的限制，可以访问整个宿主机的文件系统。
 
 
 ---
@@ -168,4 +168,4 @@ hook-json/webhook.sh"
 - 任务控制。控制进程的状态，可以挂起、恢复进程。
 - 优先级分配。设置进程的优先级。
 
-利用 Namespcae 和 Cgroups 提供的沙箱环境，再加上文件系统技术，就支持起了容器技术。
+**利用 Namespcae 和 Cgroups 提供的沙箱环境，再加上文件系统技术，就支持起了容器技术。**

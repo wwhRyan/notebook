@@ -20,3 +20,15 @@
 		```
 		新增的frpc客户端进程在端口被占用时，会不断的尝试启用，大概隔20几秒就尝试一次。、
 		大概等20几秒就可以更新客户端配置
+
+## https代理
+
+1. 工作原理
+   ![](../network/2020-01-12-19-15-53.png)
+
+   访客在浏览器中输入网址 https://blog.walterlv.com 后，浏览器会查询 的 IP，查询到之后，向此 IP 的 443 端口发送 https 请求。frp 服务端收到此请求后检查访问的域名，发现曾经连接此 frp 服务端的一个客户端配置了此域名的反向代理。于是将请求转发给此客户端。frp 客户端在收到转发的 https 请求后，使用 SSL 证书将 https 解密成 http 请求，然后修改 http 头添加或修改额外的信息。最后，frp 客户端将修改后的 http 请求转发给本机的真正的 Web 服务程序。当 Web 服务程序处理完 Web 请求后，响应沿着原路返回。
+
+   1. frp 服务端完全无法得知此 https 请求的内容, SSL 证书的一端在 frp 客户端
+   2. 客户端的证书的网址是服务端的
+   3. `plugin_crt_path = /etc/letsencrypt/live/你之前输入的域名/fullchain.pem` 
+   4. `plugin_key_path = /etc/letsencrypt/live/你之前输入的域名/privkey.pem`

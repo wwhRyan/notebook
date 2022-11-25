@@ -53,6 +53,46 @@ JFFS2是一个可写的压缩文件系统，具有日志记录和磨损均衡功
 3. mount_root安装 JFFS2 分区 ( /overlay) 并将其与 SquashFS 分区 ( /rom) 结合以创建新的虚拟根文件系统( /)
 4. 启动继续/sbin/init
 
+## 进程服务管理
+
+openwrt 是通过 init.d 来管理服务的。所有的服务都在 /etc/init.d 目录下。对某个服务进行操作也很方便，例如对 network 服务：
+```bash
+# 启动 network
+/etc/init.d/network start
+
+# 重启 network
+/etc/init.d/network restart
+
+# 停止 network
+/etc/init.d/network stop
+
+# 注册 network, 会自动在 /etc/rc.d/ 目录下建立一个链接指向 /etc/init.d 下的对应服务，如：S95network。
+# S95 表示此服务的启动顺序
+/etc/init.d/frp enable
+```
+
+## 进程服务的注册
+
+script 文件结构
+```bash
+#!/bin/sh /etc/rc.common
+
+USE_PROCD=1	#定义我们的脚本是新的 procd 脚本而不是老版本的 init 脚本。
+START=95	#启动顺序序号。最大为 95.
+STOP=15		#服务关闭顺序序号。数字越小关闭排序越靠前
+
+start_service() {
+}
+service_triggers() {
+}
+stop_service() {
+}
+restart_service() {
+}
+```
+
+>参考自: https://blog.niekun.net/archives/2277.html
+
 ## 参考文档
 - https://openwrt.org/start
 

@@ -32,3 +32,9 @@
    2. 客户端的证书的网址是服务端的
    3. `plugin_crt_path = /etc/letsencrypt/live/你之前输入的域名/fullchain.pem` 
    4. `plugin_key_path = /etc/letsencrypt/live/你之前输入的域名/privkey.pem`
+
+## F&Q
+
+1. https反向代理 https://www.lidefish.tk 会异常, https://www.lidefish.tk/home.html 可以进行访问, 为什么?
+   https://www.lidefish.tk 会解析成 http://127.0.0.1/home.html, 浏览器显示无法访问此网址
+   https://www.lidefish.tk/home.html 会正常解析到云盘的https代理.不知道为什么?

@@ -17,6 +17,8 @@
 * [openwrt](linux system Ops/openwrt/openwrt.md)
   * [iptables](linux system Ops/openwrt/iptables.md)
 * [frp](linux system Ops/frp/frp.md)
+  * [内网穿透](linux system Ops/frp/内网穿透.md)
+  * [frd stcp 和 xtcp 模式  ](linux system Ops/frp/frd stcp 和 xtcp 模式.md)
 * [网络](linux system Ops/network/网络常用工具.md)
   * [代理区分](linux system Ops/network/正向代理和反向代理.md)
   * [内网穿透](linux system Ops/network/内网穿透.md)

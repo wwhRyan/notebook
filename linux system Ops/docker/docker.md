@@ -1,13 +1,8 @@
-Docker 备忘清单
-===
+# Docker 备忘清单
 
 这是 [Docker](https://docs.docker.com/get-started/) 的快速参考备忘单。 你可以在这里找到最常见的 Docker 命令。
 
-入门
-----
-<!--rehype:body-class=cols-2-->
-
-### 入门
+## 入门
 
 在后台创建和运行容器
 
@@ -57,9 +52,7 @@ $ docker run -it -p --rm 8001:8080 --name my-nginx nginx
 
 参数 `<container>` 可以是容器 id 或名称
 
-Docker 容器
-----
-<!--rehype:body-class=cols-2-->
+## Docker 容器
 
 ### 启动
 
@@ -186,9 +179,7 @@ docker rm nginx-server
 docker update --cpu-shares 512 -m 300M nginx-server
 ```
 
-Docker 镜像
-----
-<!--rehype:body-class=cols-2-->
+## Docker 镜像
 
 ### 操控
 
@@ -216,9 +207,7 @@ $ docker build -f myOtherDockerfile .
 $ curl example.com/remote/Dockerfile | docker build -f - .
 ```
 
-Docker 网络
-----
-<!--rehype:body-class=cols-2-->
+## Docker 网络
 
 ### 操作
 
@@ -350,7 +339,6 @@ $ docker volume prune
 ```
 
 ### Docker Compose
-<!--rehype:wrap-class=col-span-2-->
 
 | :-                                              | :-                                                |
 | :---------------------------------------------- | :------------------------------------------------ |
@@ -453,7 +441,6 @@ $ docker volume prune
 | `wait`    | 阻塞直到一个或多个容器停止，然后打印它们的退出代码       |
 
 ### docker run/create
-<!--rehype:wrap-class=row-span-3-->
 
 ```bash
     --add-host list            # 添加自定义主机到 IP 映射 (host:ip)
@@ -610,9 +597,7 @@ $ docker volume prune
 -q, --quiet           仅显示图像 ID
 ```
 
-Docker 示例
----
-<!--rehype:body-class=cols-2-->
+## Docker 示例
 
 ### Docker Web 管理工具 portainer
 

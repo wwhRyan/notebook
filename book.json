@@ -15,11 +15,6 @@
         "readme": "readme.md",
         "summary": "summary.md"
     },
-    "links": {
-        "sidebar": {
-            "github": "https://github.com/wwhRyan/notebook"
-        }
-    },
     "pdf": {
         "toc": true,
         "pageNumbers": false,
@@ -30,6 +25,17 @@
             "left": 62,
             "top": 36,
             "bottom": 36
+        }
+    },
+    "plugins": [
+        "chapter-fold",
+        "splitter",
+        "sidebar-style"
+    ],
+    "pluginsConfig": {
+        "sidebar-style": {
+            "title": "个人随笔",
+            "author": "whwu"
         }
     }
 }

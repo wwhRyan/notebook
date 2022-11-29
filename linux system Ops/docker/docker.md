@@ -714,3 +714,15 @@ $ docker run -d --name gitlab \
 - [Docker 官方入门教程](https://docs.docker.com/get-started/) _(docker.com)_
 - [Docker入门学习笔记](https://jaywcjlove.github.io/docker-tutorial) _(github.io)_
 SAVE TO CACHER
+
+## Q&A
+
+- Docker 彻底重建docker0网络的方法？
+  ```bash
+  $ sudo service docker stop
+  $ sudo pkill docker
+  $ sudo iptables -t nat -F
+  $ sudo ifconfig docker0 down
+  $ sudo brctl delbr docker0
+  $ sudo service docker start
+  ```

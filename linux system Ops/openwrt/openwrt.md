@@ -94,7 +94,11 @@ restart_service() {
 >参考自: https://blog.niekun.net/archives/2277.html
 
 ## 参考文档
-- https://openwrt.org/start
+| 简介              | 网址                                     |
+| ----------------- | ---------------------------------------- |
+| openwrt官网资料   | https://openwrt.org/start                |
+| 树莓派openwrt开发 | https://doc.openwrt.cc/2-OpenWrt-Rpi/    |
+| openwrt软件包管理 | https://openwrt.org/zh/docs/techref/opkg |
 
 ## FAQ
 
@@ -110,5 +114,17 @@ restart_service() {
    80、8080、443端口肯定是被封禁了,另外被封掉的端口还有：1068、5554、9996、1025-1027、135-139、3127-3130、4444、445、5554、593。所以如果要在家用宽带上用自定义端口搭建网站，还是用10000以上的端口吧。
 
 4. socks5代理是什么?
-   基于IP层的数据传输,可以传输任何协议的数据.比如各种windows的应用QQ,微信,浏览器等,都可以走socks代理
-   
+   - 基于IP层的数据传输,可以传输任何协议的数据.比如各种windows的应用QQ,微信,浏览器等,都可以走socks代理.
+   - Socks5代理比http代理速度要快得多
+   - http代理工作在应用层, Socks5代理工作在会话层, 只是简单的传数据包
+
+## 常用操作
+
+### 国内openwrt镜像源
+
+| -        | -                                            |
+| -------- | -------------------------------------------- |
+| 清华大学 | https://mirrors.tuna.tsinghua.edu.cn/openwrt |
+| 中科大   | https://mirrors.ustc.edu.cn/openwrt          |
+| 腾讯     | https://mirrors.cloud.tencent.com/openwrt    |
+| 官方     | https://archive.openwrt.org/                 |

@@ -1,5 +1,17 @@
 # SSH
 
+## 安装包
+
+对应SSH的安装包 `openssh-server` `openssh-client`
+
+扩展 `openssh-sftp-server`
+
+启动和关闭 SSH 服务
+```bash
+/etc/init.d/sshd enable
+/etc/init.d/sshd start
+```
+
 ## 远程执行命令
 
 | 命令          | 例子                                                    |
@@ -15,12 +27,68 @@
 - 需要用户交互的指令会执行失败
 - 远程服务器上的脚本指定绝对路径
 
+## 远程拷贝
+
+- 从本地复制文件到远程服务器
+  ```bash
+  $ scp local_file remote_username@remote_ip:remote_folder
+  $ scp local_file remote_username@remote_ip:remote_file
+  ```
+
+- 从远程服务器复制到本地
+  ```bash
+  $ scp root@10.6.159.147:/opt/soft/demo.tar /opt/soft/
+  ```
+
+- 从本地复制目录到远程服务器
+  ```bash
+  $ scp -r local_folder remote_username@remote_ip:remote_folder
+  ```
+
+- 使用 sshpass 和 scp 组合
+  ```bash
+  sshpass -p 'myPass' scp -P 2122 ~/myDir/testPB.txt tomcat@xxx.xxx.xx.xxx:/chroot/tomcat/testPB
+  ```
+  > 注意 大写的 **P**
+
+> scp 命令在 openssh-client 包中提供
+
 ## 远程登录
 
 1. 账号密码登录
    需要使用到 `sshpass` 这个工具，如下用户 root ,密码 123123opop
    ```
    sshpass -p 123123opop ssh -p '6000' 'root@localhost'
+   ```
+
+2. 密钥登录
+   ```bash
+   ssh-keygen # 生产密钥对
+
+   # 登录服务器, 将生成的 id_rsa.pub 拷贝到服务器中
+   cd ~/.ssh
+   cat $(path)/id_rsa.pub >> authorized_keys
+   ```
+   
+   或者:
+   ```bash
+   ssh-keygen
+   ssh-copy-id -i ~/.ssh/id_rsa.pub root@pgxlsrv1 # -i：指定公钥文件,可以不指定,使用默认的密钥对
+   ```
+   **NOTE**:使用ssh客户端连接远程主机时，如果远程主机是首次访问，会提示添加远程主机的指纹信息.
+
+   忽略SSH所有主机指纹信息设置
+   ```bash
+   # 全局设置
+   > vim /etc/ssh/ssh_config
+   #   StrictHostKeyChecking ask
+      StrictHostKeyChecking no
+   ```
+   
+   ```bash
+   # 用户设置
+   > vim ~/.ssh/config
+      StrictHostKeyChecking no
    ```
 
 ## 代理功能

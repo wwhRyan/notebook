@@ -128,3 +128,4 @@ restart_service() {
 | 中科大   | https://mirrors.ustc.edu.cn/openwrt          |
 | 腾讯     | https://mirrors.cloud.tencent.com/openwrt    |
 | 官方     | https://archive.openwrt.org/                 |
+| entware  | https://bin.entware.net/mipselsf-k3.4/       |

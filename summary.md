@@ -34,3 +34,7 @@
   * [utils](programming/python/python.md)
 * [docker](linux system Ops/docker/docker.md)
   * [dockerfile](linux system Ops/docker/dockerfile备忘.md)
+* [个人云盘](third_party/个人云盘/开源云盘.md)
+* [autosar](third_party/autosar/autosar.md)
+  * [MCAL](third_party/autosar/MCAL.md)
+  * [NXP S32K312](third_party/autosar/S32K312.md)

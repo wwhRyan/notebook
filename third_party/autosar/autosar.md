@@ -9,12 +9,8 @@
 | RTE  | Runtime Environment (RTE)：运行环境（实时环境） |
 | BSW  | Basic Software（BSW）:基础软件                  |
 
-开发流程
-
-![](https://pic4.zhimg.com/80/v2-3b9d5fe2477f22ebac74289e39ae50bb_720w.webp)
-
 概要图
-![](autosar_3432ab.png)
+![](image/autosar_3432ab.png)
 
 主要内容是如下四个部分
 - 应用层
@@ -71,7 +67,7 @@
 - DaVinci Configurator Pro
 - Mentor Graphics
 
-NXP支持的AUTOSAR工具集成商：
-![](autosar_2.png)
+### NXP支持的AUTOSAR工具集成商：
+![](image/autosar_2.png)
 
   

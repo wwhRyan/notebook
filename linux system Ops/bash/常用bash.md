@@ -2,7 +2,8 @@
 
 - 从字符串中提取子字符串
   ```bash
-  echo "libgcc-4.8.5-4.h5.x86_64.rpm" | grep -Eo "[0-9]+\.[0-9]+.*x86_64"
+  $ echo "libgcc-4.8.5-4.h5.x86_64.rpm" | grep -Eo "[0-9]+\.[0-9]+.*x86_64"
+  $ 4.8.5-4.h5.x86_64
   ```
   >- `-E` 开启扩展（Extend）的正则表达式
   >- `-o` 只截取正则匹配的部分
@@ -18,6 +19,14 @@
 - 查找相似文件名的文件，并执行删除操作
   ```bash
   find . -name *_*xample_S32K342 | xargs rm -rfv
+  ```
+
+- 截取ip地址
+  ```bash
+  $ arp -a | grep b4:2e:99:30:fa:c0
+  ? (192.168.1.9) at b4:2e:99:30:fa:c0 [ether]  on br0
+  $ arp -a | grep b4:2e:99:30:fa:c0 | cut -d '(' -f2 | cut -d ')' -f1
+  192.168.1.9
   ```
 
 - ln -s 建立目录软连接

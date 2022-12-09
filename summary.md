@@ -37,4 +37,4 @@
 * [个人云盘](third_party/个人云盘/开源云盘.md)
 * [autosar](MCU/autosar/autosar.md)
   * [MCAL](MCU/autosar/MCAL.md)
-  * [NXP S32K312](MCU/autosar/S32K312.md)
+  * [NXP S32K312](MCU/NXP/S32K312.md)

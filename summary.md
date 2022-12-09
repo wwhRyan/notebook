@@ -35,6 +35,8 @@
 * [docker](linux system Ops/docker/docker.md)
   * [dockerfile](linux system Ops/docker/dockerfile备忘.md)
 * [个人云盘](third_party/个人云盘/开源云盘.md)
-* [autosar](MCU/autosar/autosar.md)
+* [MCU]
+  * [PWM 捕获](MCU/periph/PWM脉冲捕获.md)
+  * [autosar](MCU/autosar/autosar.md)
   * [MCAL](MCU/autosar/MCAL.md)
   * [NXP S32K312](MCU/NXP/S32K312.md)

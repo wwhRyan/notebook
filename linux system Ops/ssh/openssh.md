@@ -12,6 +12,20 @@
 /etc/init.d/sshd start
 ```
 
+## 密钥对生成
+
+1. RSA
+   ```
+   ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   ```
+   生成4096bit的密钥
+
+2. Ed25519
+   ```
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ```
+   Ed25519算法，虽然它只有 256 bit，但安全性比 RSA 3072 还要高
+
 ## 远程执行命令
 
 | 命令          | 例子                                                    |
@@ -63,7 +77,7 @@
 
 2. 密钥登录
    ```bash
-   ssh-keygen # 生产密钥对
+   ssh-keygen # 生产密钥对,默认rsa密钥对
 
    # 登录服务器, 将生成的 id_rsa.pub 拷贝到服务器中
    cd ~/.ssh

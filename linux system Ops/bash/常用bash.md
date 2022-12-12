@@ -21,6 +21,13 @@
   find . -name *_*xample_S32K342 | xargs rm -rfv
   ```
 
+- 批量修改文件名
+
+  删除所有的企业微信截图的前缀,只留下时间作为文件名.
+  ```bash
+  for file in $(find . -name "*企业微信截图_*"); do mv $file $(echo $file | sed 's/企业微信截图_//g'); done
+  ```
+
 - 取括号中的字符,例子:获取ip地址
   ```bash
   $ arp -a | grep b4:2e:99:30:fa:c0

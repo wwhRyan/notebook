@@ -27,6 +27,7 @@
 	$(subst t,e,maktfilt)
 	# makefile
 	```
+
 3. **patsubst**
 
 	pat 是 pattern 的缩写，subst是substring的缩写。对字符串进行模板的替换
@@ -65,7 +66,7 @@
 
 1. **dir**
 
-   `$(dir <names...> )` 取文件目录
+	`$(dir <names...> )` 取文件目录
 	```makefile
 	$(dir src/foo.c hacks)
 	# src/ ./

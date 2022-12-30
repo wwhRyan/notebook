@@ -49,6 +49,18 @@ printf的声明在stdio.h中`int printf(const char *fmt, ...)`,printf的实现�
 
 如果编译环境配置printf不一样，这个内部实现也可能需要很多的存储空间。最节省空间的就是直接覆盖printf函数.
 
+直接覆盖printf函数，会有有些源文件没有打印的问题！\
+在定义了printf函数的文件中,打印正常,在没有定义printf函数的文件中,打印依旧会调用系统的printf库,由于没有重定义putchar或者putc函数,会没有打印输出.
+
+```bash
+# 重定义printf到串口
+main.c # 串口有打印输出
+# 没有重定义printf
+console.c # 源文件中打印依旧调用系统printf,没有输出
+```
+
+建议用`xxx_printf`代替`printf`, 不要直接覆盖`printf`函数,避免调用系统的printf库,可以减少二进制文件体积和避免BUG.
+
 ## 中断不能调用printf
 
 以9600，1个起始位，1个停止位，8个数据位的常见方式为例,传输一个字节要1个毫秒,几个毫秒过去,MCU的其他功能都卡住了,会错失很多其他的中断或者任务.

@@ -1,4 +1,4 @@
-# 选择带USB接口的路由器
+# 路由器 + 机械硬盘 = NAS
 
 NAS的想法是路由器外接一个硬盘，实现多媒体文件的自动离线下载，同时实现DDNS内网穿透，随时随地访问的多媒体云。
 
@@ -53,8 +53,12 @@ NAS的想法是路由器外接一个硬盘，实现多媒体文件的自动离�
 
 可道云、kiftd等高级语言写的私有云系统都是基于数据库，chfs、Caddy、hacdias/webdav都是基于系统的文件系统，消耗更小。
 
+老毛子自带有owncloud、nextcloud、可道云、SeaFile，可以作为私有云的系统。
+
 [对于文件服务器极简性能的交流帖](https://www.v2ex.com/t/766471)
 ## 离线下载
+
+aria2 是一个用于下载文件的实用程序。支持的协议有 HTTP(S)、FTP、SFTP、BitTorrent 和 Metalink。老毛子中有对应的简单配置。
 
 aria2优秀的地方：
 - 支持 BitTorrent Metalink 协议

@@ -69,7 +69,26 @@ aria2优秀的地方：
 
 ## DDNS内网穿透
 
-Nginx + frp 实现多域名ssl加密访问.
+代理选择通过V2Ray访问局域网，实现一个端口加密安全的暴露所有的内网服务。主机客户端需要安装V2Ray，移动客户端需要安装shadowrocket。
+mi路由器作为V2Ray服务端，实现vmess协议的分发请求到局域网内各个成员。
+
+示意图：
+```
+ URL                    switchyomega       proxy
+                                           inbound   router          outbound
+
+ baidu.com          +-->proxy+------------>socks5+-->domain router+  vps +---> vmess
+ webdav.mi.home:8080+   direct                                    +->home+
+ google.com
+
+
+
+
+ inbound     domain router   outbound
+
+ vmess+----->home+---------->IP:port+---> 192.168.1.6.8080
+             others drop
+```
 
 ## 软路由搭建方案
 

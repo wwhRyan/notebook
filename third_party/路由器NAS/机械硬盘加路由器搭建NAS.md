@@ -38,6 +38,39 @@ NAS的想法是路由器外接一个硬盘，实现多媒体文件的自动离�
 
 其他的路由器的USB接口都是USB2.0，接移动硬盘有供电风险。选中了小米路由器3G （R3G）
 
+## 路由系统的优化过程
+
+1. pavadan 
+   
+   pavadan 是我的首选系统，但是之前在极路由上用的很方便。但是发现我的128M flash的文件系统用不到10%，扩展程序需要重编译固件或者额外的储存设备。我的硬盘是单纯的存储数据的，不想要存放这些程序。我又不想麻烦的重新编译固件，太费时间，需要多次测试。
+
+   > 将entware安装到硬盘的话,我觉得会频繁的读硬盘,对硬盘寿命有影响.如果是U盘或者SD卡,我觉得可以用这个方法扩展功能.
+
+   ```bash
+   MI-R3G:/home/root # df
+   Filesystem           Type            Size      Used Available Use% Mounted on
+   rootfs               rootfs         10.8M     10.8M         0 100% /
+   /dev/root            squashfs       10.8M     10.8M         0 100% /
+   tmpfs                tmpfs           8.0K         0      8.0K   0% /dev
+   tmpfs                tmpfs           6.0M    964.0K      5.1M  16% /etc
+   tmpfs                tmpfs           1.0M      4.0K   1020.0K   0% /home
+   tmpfs                tmpfs           8.0K         0      8.0K   0% /media
+   tmpfs                tmpfs           8.0K         0      8.0K   0% /mnt
+   tmpfs                tmpfs          24.0M     60.0K     23.9M   0% /tmp
+   tmpfs                tmpfs           4.0M     68.0K      3.9M   2% /var
+   /dev/sda1            ufsd            1.8T    287.4G      1.5T  15% /media/WD_2T
+   ```
+   padavan更合适当普通路由器用，暂时研究到这里.
+
+2. openwrt 原版
+   原版的openwrt太简陋了.不是很友好.
+
+3. openwrt lean 定制版 https://www.right.com.cn/forum/thread-3191532-1-1.html
+   将基本的功能都打包进去了,也可以增加自定义的功能到flash中,符合我的需求
+
+
+
+
 ## 文件共享服务
 
 
@@ -56,6 +89,10 @@ NAS的想法是路由器外接一个硬盘，实现多媒体文件的自动离�
 老毛子自带有owncloud、nextcloud、可道云、SeaFile，可以作为私有云的系统。
 
 [对于文件服务器极简性能的交流帖](https://www.v2ex.com/t/766471)
+
+chfs程序文件10M左右，运行使用虽然都正常，内存占用20M左右，但是cpu占用100%
+
+hacdias webdav程序文件只有8M左右，运行起来消耗的内存在10M以内，CPU占用小。[github release](https://github.com/hacdias/webdav/releases) 选择linux-mipsle-webdav。
 ## 离线下载
 
 aria2 是一个用于下载文件的实用程序。支持的协议有 HTTP(S)、FTP、SFTP、BitTorrent 和 Metalink。老毛子中有对应的简单配置。
@@ -67,7 +104,9 @@ aria2优秀的地方：
 - 支持迅雷链接下载
 - 搭配Chrome插件 `迅雷离线助手`,可以实现远程推送,自动下载
 
-## DDNS内网穿透
+## DDNS
+
+## 局域网VPN
 
 代理选择通过V2Ray访问局域网，实现一个端口加密安全的暴露所有的内网服务。主机客户端需要安装V2Ray，移动客户端需要安装shadowrocket。
 mi路由器作为V2Ray服务端，实现vmess协议的分发请求到局域网内各个成员。

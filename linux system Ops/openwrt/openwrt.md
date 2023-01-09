@@ -129,3 +129,18 @@ restart_service() {
 | 腾讯     | https://mirrors.cloud.tencent.com/openwrt    |
 | 官方     | https://archive.openwrt.org/                 |
 | entware  | https://bin.entware.net/mipselsf-k3.4/       |
+
+## 基于openwrt的定制版系统
+
+### Pandora Box
+   
+   Pandora Box 是 OpenWrt 的中国分支，具有专有和非免费驱动程序。
+
+### Padavan
+   
+   Padavan 是华硕路由器的固件的自定义固件RT-N56U，它也适用于一些非华硕路由器。
+
+   - Padavan与OpenWRT最大的区别是没有overlay的JFFS2文件系统，基本上目录都是不可写入的，系统不会被轻易破坏，但是系统的修改难度也很高，只能依赖于外部储存安装entware或者源码重新编译。
+   > pavadan 可修改区域 /etc/storage，修改后还需要执行 mtd_storage.sh save 保存，否则所做的修改在重启或者断电后会丢失
+
+### dd-wrt

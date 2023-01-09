@@ -2,6 +2,12 @@
 
 entware 是一个适用于嵌入式系统的软件包库，支持x86，x64，arm，mips架构,使用 opkg 包管理系统进行管理，现在在官方的源上已经有超过 2000 个软件包了。广泛适用于路由器.
 
+1. entware 的前身是 optware，可以独立于openwrt 的 SquashFS 文件系统，一般存放于硬盘、SD卡、U盘等外置设备上，挂载于opt文件夹。
+
+> [在Padavan 上使用Entware](https://xzhih.github.io/Padavan-entware/)
+
+2. 
+
 ## 在极路由1S使用 entware
 
 本想在极1S上安装些程序，结果登录ssh后发现系统自带的opkg有限制，即使更改为openWRT的源也不能安装，说各种不兼容。
